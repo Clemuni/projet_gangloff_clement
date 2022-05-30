@@ -11,8 +11,8 @@ use Slim\Factory\AppFactory;
 
 $app = AppFactory::create();
 
-// POST /api/signin
-$app->post('/api/signin', function(Request $request, Response $response, $args){
+// POST /api/register
+$app->post('/api/register', function(Request $request, Response $response, $args){
     $body = $request->getParsedBody();
     $email = $body['email'] ?? "";
     $password = $body['password'] ?? "";
@@ -20,8 +20,8 @@ $app->post('/api/signin', function(Request $request, Response $response, $args){
     $first_name = $body['first_name'] ?? "";
     $last_name = $body['last_name'] ?? "";
 
-    $err = $email == "" || $password == "" || $username == "" || $last_name == "" || $first_name == "";
-    if ($err) {
+    $error = $email == "" || $password == "" || $username == "" || $last_name == "" || $first_name == "";
+    if ($error) {
         // Problème avec les champs
         $data["error"] = "Error with the accounts field";
         $response = $response->withStatus(403);
@@ -62,8 +62,8 @@ $app->post('/api/login', function(Request $request, Response $response, $args) {
     $username = $body['username'] ?? "";
     $password = $body['password'] ?? "";
 
-    $err = $username == "" || $password == "";
-    if ($err) {
+    $error = $username == "" || $password == "";
+    if ($error) {
         // Problème avec les champs
         $data["error"] = "Error with the accounts field";
         $response = $response->withStatus(403);
@@ -102,11 +102,9 @@ $app->get('/api/products', function(Request $request, Response $response, $args)
     foreach($products as $product) {
         $productInfo = array(
             "id" => $product->getId(),
-            "name" => $product->getName(),
-            "cores" => $product->getCores(),
-            "threads" => $product->getThreads(),
-            "brand" => $product->getBrand(),
-            "price" => $product->getPrice()
+            "label" => $product->getLabel(),
+            "price" => $product->getPrice(),
+            "quantity" => $product->getQuantity()
         );
         array_push($data, $productInfo);
     }
