@@ -1,0 +1,1 @@
+:root{color-scheme:light dark}*{box-sizing:border-box}html,body{margin:0;width:100%;min-height:100vh}body{display:flex;flex-direction:column;font-family:"Montserrat",sans-serif;color:#fdfefe;font-size:18px;background-color:#22222b}body>app-root{flex:1;flex-direction:column;display:flex;position:relative}
