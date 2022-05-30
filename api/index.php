@@ -84,7 +84,7 @@ $app->post('/api/login', function(Request $request, Response $response, $args) {
     }
 
     $data["email"] = $client->getEmail();
-    $data["username"] = $client->getLogin();
+    $data["username"] = $client->getUsername();
     $data["first_name"] = $client->getFirstName();
     $data["last_name"] = $client->getLastName();
     $data["expiration_time"] = time() + JWT_EXPIRATION_TIME;
