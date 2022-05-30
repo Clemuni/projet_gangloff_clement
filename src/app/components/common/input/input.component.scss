@@ -1,0 +1,31 @@
+.form-row {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 1.5rem;
+
+  label {
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    font-size: 0.8em;
+    background-color: #2a2a35;
+    padding: 0 5px;
+    border-radius: 4px;
+  }
+  input {
+    background-color: #2a2a35;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 10px 15px;
+    font-size: 1em;
+
+    &.error {
+      border-color: #f30808;
+    }
+  }
+  span.error {
+    color: #f30808;
+    font-size: 0.7em;
+  }
+}

@@ -1,0 +1,19 @@
+:host {
+  display: flex;
+  width: 100%;
+}
+app-client-form {
+  display: block;
+  width: 100%;
+  max-width: 30rem;
+  margin: 0 auto;
+}
+app-recap {
+  width: 100%;
+  max-width: 25rem;
+  background-color: #1cad7e;
+  height: 100%;
+  margin: 1rem;
+  padding: 25px;
+  border-radius: 4px;
+}

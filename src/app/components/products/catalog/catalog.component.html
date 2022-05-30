@@ -1,0 +1,10 @@
+<app-input type="text" label="Filtrer" [value]="filterText" (valueChangeEventEmitter)="handleFilterEvent($event)">
+</app-input>
+
+<ul>
+    <li *ngFor="let product of catalog">
+        <div>{{ product.label }} {{ product.price }}€</div>
+        <app-see-details-product-button [product]="product"></app-see-details-product-button>
+        <app-add-product-button [product]="product"></app-add-product-button>
+    </li>
+</ul>

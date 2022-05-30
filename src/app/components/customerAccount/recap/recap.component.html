@@ -1,0 +1,7 @@
+<h1>Récapitulatif</h1>
+<ol *ngIf="data">
+    <li *ngFor="let row of data">
+        <span *ngIf="row.accessor !== 'phoneNumber'; else elseBlock;">{{ row.label }} : <b>{{ row.value }}</b></span>
+        <ng-template #elseBlock>{{ row.label }} : <b>{{ row.value | phone:'fr' }}</b></ng-template>
+    </li>
+</ol>

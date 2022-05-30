@@ -1,0 +1,7 @@
+<h1>Informations personnelles</h1>
+
+<app-input *ngFor="let field of form" type="{{field.type}}" label="{{field.label}}" [value]="field.value"
+    [isValid]="field.isValid" (valueChangeEventEmitter)="changeValue($event, field.accessor)" [pattern]="field.pattern">
+</app-input>
+
+<button class="submit" (click)="submit()">Valider</button>

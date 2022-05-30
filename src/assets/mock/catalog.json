@@ -1,0 +1,6 @@
+[
+  { "label": "Salade 🥗", "price": 1.99, "quantity": 1 },
+  { "label": "Tomate 🍅", "price": 2.99, "quantity": 1 },
+  { "label": "Oignon 🧅", "price": 0.99, "quantity": 1 },
+  { "label": "Sauce blanche 🍯", "price": 5.99, "quantity": 1 }
+]

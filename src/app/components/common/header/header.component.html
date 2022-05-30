@@ -1,0 +1,10 @@
+<a [routerLink]="['/']">Accueil</a>
+<a [routerLink]="['/compte-client']">Compte client</a>
+<a [routerLink]="['/produits/catalogue']">Catalogue</a>
+<a [routerLink]="['/produits/panier']" class="right"
+  >Panier
+  <span *ngIf="productCount$ | async as count" class="badge">{{
+    count
+  }}</span></a
+>
+<a [routerLink]="['/connexion']">Connexion </a>

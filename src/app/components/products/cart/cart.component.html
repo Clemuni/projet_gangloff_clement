@@ -1,0 +1,6 @@
+<ul *ngIf="products$ | async as products">
+    <li *ngFor="let product of products">{{ product.label }}<span class="quantity">{{ product.quantity }}</span>
+        <app-see-details-product-button [product]="product"></app-see-details-product-button>
+        <app-remove-product-button [product]="product"></app-remove-product-button>
+    </li>
+</ul>

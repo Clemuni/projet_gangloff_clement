@@ -1,0 +1,6 @@
+<div class="form-row">
+    <label for="{{ label }}">{{ label }}</label>
+    <input type="{{ type }}" [(ngModel)]="value" id="{{ label }}" (input)="handleInputChange($event)"
+        [ngClass]="{'error' : !isValid}" />
+    <span *ngIf="!isValid" class="error">Le champ n'est pas valide</span>
+</div>
