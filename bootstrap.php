@@ -35,7 +35,7 @@ class Config {
             "algorithm" => ["HS256"],
             "secret" => JWT_SECRET,
             "path" => ["/api"],
-            "ignore" => ["/api/login", "/api/signin"],
+            "ignore" => ["/api/login", "/api/register"],
             "error" => function ($response, $arguments) {
                 $data["status"] = "error";
                 $data["message"] = $arguments["message"];
