@@ -1,0 +1,15 @@
+<a [routerLink]="['/']">Accueil</a>
+<a *ngIf="currentUser" [routerLink]="['/compte-client']">Compte client</a>
+<a *ngIf="currentUser" [routerLink]="['/produits/catalogue']">Catalogue</a>
+<a *ngIf="currentUser" [routerLink]="['/produits/panier']" class="right"
+  >Panier
+  <span *ngIf="productCount$ | async as count" class="badge">{{
+    count
+  }}</span></a
+>
+<a *ngIf="!currentUser" class="right" [routerLink]="['/connexion']"
+  >Connexion</a
+>
+<a *ngIf="!currentUser" [routerLink]="['/inscription']">Inscription</a>
+
+<button *ngIf="currentUser" (click)="logout()">Se deconnecter</button>

@@ -1,0 +1,6 @@
+<div *ngIf="product">
+    <p>Détails du produit</p>
+    <p>{{ product.label }}</p>
+    <p>{{ product.price }}€</p>
+    <app-add-product-button [product]="product"></app-add-product-button>
+</div>
