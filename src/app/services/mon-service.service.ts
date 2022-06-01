@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Product } from '../ts/types';
+import { Product } from '../redux/models/Product';
 import { environment } from './../../environments/environment';
 
 @Injectable()

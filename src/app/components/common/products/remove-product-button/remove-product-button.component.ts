@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Store } from '@ngxs/store';
 import { RemoveProduct } from '../../../../redux/actions/product.action';
-import { Product } from '../../../../ts/types';
+import { Product } from '../../../../redux/models/Product';
 
 @Component({
   selector: 'app-remove-product-button',

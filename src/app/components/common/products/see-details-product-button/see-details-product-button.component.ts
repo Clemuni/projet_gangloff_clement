@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Product } from '../../../../ts/types';
+import { Product } from '../../../../redux/models/Product';
 
 @Component({
   selector: 'app-see-details-product-button',

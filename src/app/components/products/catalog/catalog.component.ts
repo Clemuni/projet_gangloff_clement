@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { MonService } from '../../../services/mon-service.service';
-import { Product, FormInputChangeEventValues } from '../../../ts/types';
+import { FormInputChangeEventValues } from '../../../ts/form';
+import { Product } from '../../../redux/models/Product';
 
 @Component({
   selector: 'app-catalog',

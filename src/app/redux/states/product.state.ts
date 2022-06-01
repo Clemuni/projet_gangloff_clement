@@ -1,5 +1,5 @@
 import { AddProduct, RemoveProduct } from '../actions/product.action';
-import { CartProduct, Product } from '../../ts/types';
+import { CartProduct, Product } from '../../redux/models/Product';
 import { Action, Selector, State, StateContext } from '@ngxs/store';
 
 @State<CartProduct>({

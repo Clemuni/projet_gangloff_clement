@@ -1,4 +1,4 @@
-import { Product } from '../../ts/types';
+import { Product } from '../../redux/models/Product';
 
 export class AddProduct {
   static readonly type = '[Product] Add';

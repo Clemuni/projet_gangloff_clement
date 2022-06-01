@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../../../ts/types';
+import { Product } from '../../../redux/models/Product';
 import { ActivatedRoute } from '@angular/router';
 import { MonService } from '../../../services/mon-service.service';
 import { Subscription } from 'rxjs';

@@ -6,7 +6,7 @@ import { NgxsModule } from '@ngxs/store';
 
 import { AppComponent } from './app.component';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/common/header/header.component';
 import { FooterComponent } from './components/common/footer/footer.component';
 import { ClientFormComponent } from './components/customerAccount/client-form/client-form.component';
@@ -31,6 +31,9 @@ import { ApiHttpInterceptor } from './http/api-httpinterceptor';
 import { LoginComponent } from './components/http/login/login.component';
 
 import { AuthService } from './services/auth-service.service';
+import { RegisterComponent } from './components/http/register/register.component';
+import { CommonModule } from '@angular/common';
+import { ControlMessageComponent } from './components/common/control-message/control-message.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -61,6 +64,8 @@ const appRoutes: Routes = [
     RemoveProductButtonComponent,
     SeeDetailsProductButtonComponent,
     LoginComponent,
+    RegisterComponent,
+    ControlMessageComponent,
   ],
   imports: [
     BrowserModule,
@@ -68,6 +73,8 @@ const appRoutes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
     NgxsModule.forRoot([ProductState]),
+    ReactiveFormsModule,
+    CommonModule,
   ],
   providers: [
     AuthService,

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Form } from '../../../ts/types';
+import { Form } from '../../../ts/form';
 
 @Component({
   selector: 'app-recap',

@@ -1,5 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { AuthService } from '../../../services/auth-service.service';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth-service.service';
 
 @Component({
   selector: 'app-login',
@@ -7,17 +9,54 @@ import { AuthService } from '../../../services/auth-service.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  @Input() username: string = '';
-  @Input() password: string = '';
+  formLogin!: FormGroup;
+  errorMsg!: string;
 
-  constructor(private authService: AuthService) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private authService: AuthService
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.initializeForm();
+  }
 
-  connexion() {
-    console.log(this.username, this.password);
-    this.authService
-      .postLogin(this.username, this.password)
-      .subscribe((flux) => console.log(flux));
+  initializeForm(): void {
+    this.formLogin = this.formBuilder.group({
+      username: ['', [Validators.required]],
+      password: ['', [Validators.required]],
+    });
+  }
+
+  onSubmit(): void {
+    if (this.formLogin.valid) {
+      this.authService
+        .postLogin(this.username?.value, this.password?.value)
+        .subscribe(
+          (data) => {
+            this.router.navigate(['client/account']);
+          },
+          (errorResponse) => {
+            if (errorResponse['status'] == 404) {
+              this.errorMsg = "Pas d'url correspondante :(";
+            } else {
+              this.errorMsg = errorResponse['error']['error'];
+            }
+          }
+        );
+    } else {
+      Object.keys(this.formLogin.controls).forEach((field) => {
+        const control = this.formLogin.get(field);
+        control?.markAsTouched({ onlySelf: true });
+      });
+    }
+  }
+
+  get username() {
+    return this.formLogin.get('username');
+  }
+  get password() {
+    return this.formLogin.get('password');
   }
 }
