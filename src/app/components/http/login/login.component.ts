@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
         .postLogin(this.username?.value, this.password?.value)
         .subscribe(
           (data) => {
-            this.router.navigate(['client/account']);
+            this.router.navigate(['/']);
           },
           (errorResponse) => {
             if (errorResponse['status'] == 404) {

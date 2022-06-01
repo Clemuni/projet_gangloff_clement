@@ -42,6 +42,7 @@ const appRoutes: Routes = [
   { path: 'produits/panier', component: CartComponent },
   { path: 'produits/:label', component: DetailsComponent },
   { path: 'connexion', component: LoginComponent },
+  { path: 'inscription', component: RegisterComponent },
   { path: '**', component: Page404Component },
 ];
 

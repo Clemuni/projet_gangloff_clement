@@ -49,7 +49,7 @@ export class RegisterComponent implements OnInit {
         )
         .subscribe(
           (data) => {
-            this.router.navigate(['client/login']);
+            this.router.navigate(['connexion']);
           },
           (errorResponse) => {
             if (errorResponse['status'] == 404) {
