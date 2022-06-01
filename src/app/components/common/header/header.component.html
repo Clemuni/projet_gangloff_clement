@@ -7,7 +7,9 @@
     count
   }}</span></a
 >
-<a *ngIf="!currentUser" [routerLink]="['/connexion']">Connexion</a>
+<a *ngIf="!currentUser" class="right" [routerLink]="['/connexion']"
+  >Connexion</a
+>
 <a *ngIf="!currentUser" [routerLink]="['/inscription']">Inscription</a>
 
 <button *ngIf="currentUser" (click)="logout()">Se deconnecter</button>

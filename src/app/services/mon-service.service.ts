@@ -9,6 +9,6 @@ export class MonService {
   constructor(private httpClient: HttpClient) {}
 
   getCatalog(): Observable<Product[]> {
-    return this.httpClient.get<Product[]>(environment.baseUrl);
+    return this.httpClient.get<Product[]>('/api/products');
   }
 }
