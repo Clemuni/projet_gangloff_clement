@@ -2,13 +2,15 @@
   display: flex;
 }
 
-a {
+a,
+button {
   text-decoration: none;
   color: inherit;
   margin: 0 5px;
   padding: 10px 15px;
   position: relative;
   display: inline-block;
+  cursor: pointer;
 
   &:hover {
     background-color: #ffffff0a;
